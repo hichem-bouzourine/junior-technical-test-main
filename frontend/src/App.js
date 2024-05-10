@@ -1,26 +1,17 @@
 import React from 'react';
-import Modal from 'react-modal';
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
 
 import './App.css';
 
-Modal.setAppElement('#root');
 
 const App = () => {
   return (
     <div className="app">
-        
-         <div className="app-header">
-            <div className="app-title">Mes produits</div>
-            <button className='product-add-button' onClick={() => console.log('soulOpenModal')}>Ajouter un produit</button>
-        </div>
-
-        <div className="app-content">
-            Afficher la liste des produits
-        </div>
-
-        <Modal>
-            <div>Use ProductForm Component</div>
-        </Modal>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/product/:id" element={<Product />} /> */}
+        </Routes>
     </div>
   );
 }
