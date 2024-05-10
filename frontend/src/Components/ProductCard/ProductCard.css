@@ -55,6 +55,7 @@
 .product-imageUrl {
     padding: 5px;
     width: 100px;
+    border-radius: 15%;
 }
 
 .product-action-buttons {
