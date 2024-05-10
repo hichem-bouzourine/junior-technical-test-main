@@ -55,4 +55,14 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+// DELETE : Delete a product
+router.delete('/:id', async (req, res) => {
+    try {
+        const removedProduct = await Product.findByIdAndRemove(req.params.id);
+        res.json(removedProduct);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
 module.exports = router;
