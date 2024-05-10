@@ -33,5 +33,17 @@ function validateProduct(product) {
   return schema.validate(product);
 }
 
+function validateProductUpdate(product) {
+  const schema = Joi.object({
+    name: Joi.string(),
+    description: Joi.string(),
+    price: Joi.number(),
+    imageUrl: Joi.string()
+  });
+
+  return schema.validate(product);
+}
+
 exports.Product = Product;
 exports.ValidateProduct = validateProduct;
+exports.ValidateProductUpdate = validateProductUpdate;
