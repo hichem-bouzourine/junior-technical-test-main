@@ -36,7 +36,7 @@ const Mainpage = () => {
             <h1>Afficher la liste des produits</h1>
             <Grid container spacing={3}>
                 {products.map((product) => {                        
-                    return <ProductCard product={product} />
+                    return <ProductCard product={product} key={product?._id}/>
                 })}
             </Grid>
         </div>

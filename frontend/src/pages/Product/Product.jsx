@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import "./Product.css"
 
 import {getProduct, deleteProduct} from '../../services/ProductService'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const Product = () => {
   const [product, setProduct] = useState(null)
+  const navigate = useNavigate()
 
   let { id } = useParams();
 
@@ -17,8 +18,12 @@ const Product = () => {
 
   const handleDeletion = () => {
     deleteProduct(id).then(() => {
-      window.location.href = "/"
+      navigate('/')
     })
+  }
+
+  const handleModification = () => {
+    navigate(`/product/edit/${id}`)
   }
 
   return (
@@ -33,7 +38,7 @@ const Product = () => {
         </div>
       </div>
       <div className="product__buttons">
-        <button className="buttons__modify">Modify</button>
+        <button className="buttons__modify" onClick={handleModification}>Modify</button>
         <button className="buttons__delete" onClick={handleDeletion}>Delete</button>
       </div>
     </div>

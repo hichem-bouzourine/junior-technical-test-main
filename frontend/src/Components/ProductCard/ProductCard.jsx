@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({product}) => {
     const navigate = useNavigate();
-    console.log(product)
     return (
             <div className='product-card-wrapper' key={product?._id}>
                 <div className='product-main-infos'>
