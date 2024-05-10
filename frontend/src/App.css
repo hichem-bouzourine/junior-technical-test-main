@@ -1,0 +1,16 @@
+.app-header {
+    background-color: gainsboro;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+
+.app-title {
+    font-size: 16px;
+}
+
+.app-content {
+    padding: 40px;
+}
