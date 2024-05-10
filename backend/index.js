@@ -6,14 +6,9 @@ const port = 3001;
 
 const initMongoose = require('./initMongoose');
 
-
 app.use(cors());
-app.use(express.json());
 
-app.get('/products', async (req, res) => {
-	console.log('get products')
-	res.json('ok')
-})
+require('./startup/routes')(app); // Move the route setup to a separate file
 
 const main =  async () => {
     await initMongoose()
