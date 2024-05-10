@@ -1,8 +1,8 @@
 import './ProductCard.css'
-import Grid from '@mui/material/Grid';
-
+import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({product}) => {
+    const navigate = useNavigate();
     console.log(product)
     return (
             <div className='product-card-wrapper' key={product?._id}>
@@ -16,7 +16,7 @@ const ProductCard = ({product}) => {
                 </div>
                 
                 <div className='product-action-buttons'>
-                    <button className='product-details-button' onClick={() => console.log('product-details-button')}>Voir le détail</button>
+                    <button className='product-details-button' onClick={() => navigate(`product/${product?._id}`)}>Voir le détail</button>
                 </div>
             </div>
     )
